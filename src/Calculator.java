@@ -36,9 +36,13 @@ public class Calculator extends JFrame{
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(250,320);
+        //setResizable(false);
         setVisible(true);
         add(mainPanel);
+
+        //ustawienie fonta dla textField
         textField.setFont(new Font("SansSerif", Font.BOLD, 20));
+        //ustawienie fonta dla memoryLabel
 
         numbersListener();
         functionListener();
@@ -48,6 +52,10 @@ public class Calculator extends JFrame{
         a1Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
+                if(!operation.equals("nop")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                    textField.setText("");
+
+                }
                 if(textField.getText().equals("0"))
                     text = a1Button.getText();
                 else
@@ -162,7 +170,7 @@ public class Calculator extends JFrame{
             }
         });
 
-        CButton.addActionListener(new ActionListener() {
+        CEButton.addActionListener(new ActionListener() {
                 //kasuje tylko to co na wyswietlaczu
             public void actionPerformed(ActionEvent actionEvent) {
                 textField.setText("0");
@@ -173,6 +181,7 @@ public class Calculator extends JFrame{
                 //kasuje wyswietlacz i pamięć
             public void actionPerformed(ActionEvent actionEvent) {
                 memory = 0;
+                operation = "nop";
                 textField.setText(String.valueOf(memory));
             }
         });
@@ -196,6 +205,66 @@ public class Calculator extends JFrame{
                     memory += Long.parseLong(textField.getText()); //jesli pamiec nie jest pusta DODAJ
                 operation = PlusButton.getText();
                 textField.setText(String.valueOf(memory));
+            }
+        });
+
+        MinusButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(memory == 0)
+                    memory = Long.parseLong(textField.getText());
+                else
+                    memory -= Long.parseLong(textField.getText());
+                operation = MinusButton.getText();
+                textField.setText(String.valueOf(memory));
+            }
+        });
+
+        TimesButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(memory == 0)
+                    memory = Long.parseLong(textField.getText());
+                else
+                    memory *= Long.parseLong(textField.getText());
+                operation = TimesButton.getText();
+                textField.setText(String.valueOf(memory));
+            }
+        });
+
+        DivideButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                if(memory == 0)
+                    memory = Long.parseLong(textField.getText());
+                else
+                    memory /= Long.parseLong(textField.getText());
+                operation = DivideButton.getText();
+                textField.setText(String.valueOf(memory));
+            }
+        });
+
+        EqualsButtob.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                String text;
+                if(!operation.equals("nop")){
+                    switch (operation) {
+                        case "+":
+                            memory += Long.parseLong(textField.getText());
+                            break;
+                        case "-":
+                            memory -= Long.parseLong(textField.getText());
+                            break;
+                        case "/":
+                            memory /= Long.parseLong(textField.getText());
+                            break;
+                        case "*":
+                            memory *= Long.parseLong(textField.getText());
+                            break;
+                    } text = String.valueOf(memory);
+                } else
+                    text = textField.getText();
+
+                memory = 0;
+                operation = "nop";
+                textField.setText(text);
             }
         });
     }
