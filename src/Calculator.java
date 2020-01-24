@@ -44,12 +44,6 @@ public class Calculator extends JFrame{
         functionListener();
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() { new Calculator(); } });
-    }
-
     public void numbersListener() {
         a1Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
