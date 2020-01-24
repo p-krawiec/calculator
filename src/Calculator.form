@@ -134,20 +134,21 @@
           <text value="-"/>
         </properties>
       </component>
-      <component id="4b98a" class="javax.swing.JButton" binding="PercentButton">
+      <component id="4b98a" class="javax.swing.JButton" binding="CEButton">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="%"/>
+          <enabled value="true"/>
+          <text value="CE"/>
         </properties>
       </component>
-      <component id="c1a5" class="javax.swing.JButton" binding="CEButton">
+      <component id="c1a5" class="javax.swing.JButton" binding="CButton">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="CE"/>
+          <text value="C"/>
         </properties>
       </component>
       <component id="3a7fb" class="javax.swing.JButton" binding="BackspaceButton">
