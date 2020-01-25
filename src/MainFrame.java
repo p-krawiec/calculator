@@ -5,9 +5,9 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         super("Kalkulator");
 
+        setSize(250,360);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(250,340);
         //setResizable(false);
         setVisible(true);
         SimpleCalc sc = new SimpleCalc();

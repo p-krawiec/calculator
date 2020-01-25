@@ -28,6 +28,7 @@ public class SimpleCalc {
     private JButton DivideButton;
     private JButton PlusButton;
     private JButton EqualsButtob;
+    private JLabel memoryLabel;
 
     long memory = 0;
     String operation = "nop"; //no operation //obecnie wykonywana operacja
@@ -36,6 +37,8 @@ public class SimpleCalc {
 
         //ustawienie fonta dla textField
         textField.setFont(new Font("SansSerif", Font.BOLD, 20));
+        //ustawienie fonta dla memorylabel
+        memoryLabel.setFont(new Font("SansSerif", Font.BOLD, 11));
 
         numbersListener();
         functionListener();
@@ -175,6 +178,7 @@ public class SimpleCalc {
             public void actionPerformed(ActionEvent actionEvent) {
                 memory = 0;
                 operation = "nop";
+                setMemoryLabel("");
                 textField.setText(String.valueOf(memory));
             }
         });
@@ -197,6 +201,7 @@ public class SimpleCalc {
                 else
                     memory += Long.parseLong(textField.getText()); //jesli pamiec nie jest pusta DODAJ
                 operation = PlusButton.getText();
+                setMemoryLabel("+");
                 textField.setText(String.valueOf(memory));
             }
         });
@@ -208,6 +213,7 @@ public class SimpleCalc {
                 else
                     memory -= Long.parseLong(textField.getText());
                 operation = MinusButton.getText();
+                setMemoryLabel("-");
                 textField.setText(String.valueOf(memory));
             }
         });
@@ -219,6 +225,7 @@ public class SimpleCalc {
                 else
                     memory *= Long.parseLong(textField.getText());
                 operation = TimesButton.getText();
+                setMemoryLabel("*");
                 textField.setText(String.valueOf(memory));
             }
         });
@@ -230,6 +237,7 @@ public class SimpleCalc {
                 else
                     memory /= Long.parseLong(textField.getText());
                 operation = DivideButton.getText();
+                setMemoryLabel("/");
                 textField.setText(String.valueOf(memory));
             }
         });
@@ -257,8 +265,16 @@ public class SimpleCalc {
 
                 memory = 0;
                 operation = "nop";
+                setMemoryLabel("");
                 textField.setText(text);
             }
         });
+    }
+
+    void setMemoryLabel(String text) {
+        if(memory == 0) {
+            memoryLabel.setText("0");
+        } else
+            memoryLabel.setText(String.valueOf(memory) + " " + text);
     }
 }
