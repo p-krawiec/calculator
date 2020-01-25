@@ -7,7 +7,6 @@ public class MainFrame extends JFrame {
 
     private SimpleCalc simpleCalc;
     private NWDCalculator nwdCalculator;
-    private JPanel selectedPanel;
 
     public MainFrame() {
         super("Kalkulator");
@@ -21,7 +20,6 @@ public class MainFrame extends JFrame {
         nwdCalculator = new NWDCalculator();
         add(simpleCalc.getMainPanel());
         setJMenuBar(createMenuBar());
-
     }
 
     private JMenuBar createMenuBar() {
