@@ -214,7 +214,7 @@ public class SimpleCalc {
             public void actionPerformed(ActionEvent actionEvent) {
                 if(operation.equals("nop")) {
                     if(memory == 0)
-                        memory = -Long.parseLong(textField.getText());
+                        memory = Long.parseLong(textField.getText());
                     else
                         memory -= Long.parseLong(textField.getText());
                 } else {
@@ -276,10 +276,7 @@ public class SimpleCalc {
     }
 
     void setMemoryLabel(String text) {
-        if(memory == 0) {
-            memoryLabel.setText("0");
-        } else
-            memoryLabel.setText(String.valueOf(memory) + " " + text);
+        memoryLabel.setText(String.valueOf(memory) + " " + text);
     }
 
     void doOperation() {
