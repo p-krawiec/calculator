@@ -1,7 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
+
+    private SimpleCalc simpleCalc;
+    private NWDCalculator nwdCalculator;
+    private JPanel selectedPanel;
 
     public MainFrame() {
         super("Kalkulator");
@@ -11,9 +17,11 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         //setResizable(false);
         setVisible(true);
-        SimpleCalc sc = new SimpleCalc();
-        add(sc.getMainPanel());
+        simpleCalc = new SimpleCalc();
+        nwdCalculator = new NWDCalculator();
+        add(simpleCalc.getMainPanel());
         setJMenuBar(createMenuBar());
+
     }
 
     private JMenuBar createMenuBar() {
@@ -29,9 +37,25 @@ public class MainFrame extends JFrame {
         fileMenu.add(nwdItem);
 
         advancedItem.setEnabled(false);
-        nwdItem.setEnabled(false);
+        //nwdItem.setEnabled(false);
 
         menuBar.add(fileMenu);
+
+        simpleItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                setSize(260,365);
+                remove(nwdCalculator.getMainPanel());
+                add(simpleCalc.getMainPanel());
+            }
+        });
+
+        nwdItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                setSize(260,150);
+                remove(simpleCalc.getMainPanel());
+                add(nwdCalculator.getMainPanel());
+            }
+        });
 
         return menuBar;
     }

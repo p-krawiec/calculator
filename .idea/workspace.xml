@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d075981a-9699-4fb3-b5b5-1aeb47f029ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NWDCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NWDCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +36,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="232" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.NWDCalculator">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="Calculator" />
@@ -59,8 +60,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.NWDCalculator" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.NWDCalculator" />
       </list>
     </recent_temporary>
   </component>
@@ -102,22 +103,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="834" y="408" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff/0.0.1920.1040@0.0.1920.1040" timestamp="1579958697547" />
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1579992295680">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1579993162366">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579992295680" />
-    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1579992295680">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579993162366" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1579993162365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579992295680" />
-    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1579992295680">
+    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579993162365" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1579993162365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579992295680" />
-    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1579992295680">
+    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579993162365" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1579993162365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579992295680" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579993162365" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1579969957326">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

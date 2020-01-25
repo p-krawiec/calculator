@@ -2,22 +2,17 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class NWDCalculator extends JFrame {
+public class NWDCalculator extends JPanel {
 
     private JPanel mainPanel;
+    public JPanel getMainPanel() { return mainPanel; }
+
     private JTextField aField;
     private JTextField bField;
     private JTextField nwdField;
     private JButton obliczButton;
 
     public NWDCalculator() {
-        super("NWD");
-
-        setSize(260,150);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        add(mainPanel);
-        setVisible(true);
 
         nwdField.setBorder(BorderFactory.createEmptyBorder());
 
@@ -54,13 +49,5 @@ public class NWDCalculator extends JFrame {
                 b -= a;
         }
         return a;
-    }
-
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() { new NWDCalculator(); }
-        });
     }
 }
