@@ -196,10 +196,14 @@ public class SimpleCalc {
 
         PlusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(memory == 0)
-                    memory = Long.parseLong(textField.getText()); //jesli pamiec jest pusta to ustaw memory na liczbe
-                else
-                    memory += Long.parseLong(textField.getText()); //jesli pamiec nie jest pusta DODAJ
+                if(operation.equals("nop")) {
+                    if(memory == 0)
+                        memory = Long.parseLong(textField.getText());
+                    else
+                        memory += Long.parseLong(textField.getText());
+                } else {
+                    doOperation();
+                }
                 operation = PlusButton.getText();
                 setMemoryLabel("+");
                 textField.setText(String.valueOf(memory));
@@ -208,10 +212,14 @@ public class SimpleCalc {
 
         MinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(memory == 0)
-                    memory = Long.parseLong(textField.getText());
-                else
-                    memory -= Long.parseLong(textField.getText());
+                if(operation.equals("nop")) {
+                    if(memory == 0)
+                        memory = -Long.parseLong(textField.getText());
+                    else
+                        memory -= Long.parseLong(textField.getText());
+                } else {
+                    doOperation();
+                }
                 operation = MinusButton.getText();
                 setMemoryLabel("-");
                 textField.setText(String.valueOf(memory));
@@ -220,10 +228,14 @@ public class SimpleCalc {
 
         TimesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(memory == 0)
-                    memory = Long.parseLong(textField.getText());
-                else
-                    memory *= Long.parseLong(textField.getText());
+                if(operation.equals("nop")) {
+                    if(memory == 0)
+                        memory = Long.parseLong(textField.getText());
+                    else
+                        memory *= Long.parseLong(textField.getText());
+                } else {
+                    doOperation();
+                }
                 operation = TimesButton.getText();
                 setMemoryLabel("*");
                 textField.setText(String.valueOf(memory));
@@ -232,11 +244,15 @@ public class SimpleCalc {
 
         DivideButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(memory == 0)
-                    memory = Long.parseLong(textField.getText());
-                else
-                    memory /= Long.parseLong(textField.getText());
-                operation = DivideButton.getText();
+                if(operation.equals("nop")) {
+                    if(memory == 0)
+                        memory = Long.parseLong(textField.getText());
+                    else
+                        memory = memory / Long.parseLong(textField.getText());
+                } else {
+                    doOperation();
+                }
+                operation = "d"; //bo znak / wywoływał błędy
                 setMemoryLabel("/");
                 textField.setText(String.valueOf(memory));
             }
@@ -246,20 +262,8 @@ public class SimpleCalc {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
                 if(!operation.equals("nop")){
-                    switch (operation) {
-                        case "+":
-                            memory += Long.parseLong(textField.getText());
-                            break;
-                        case "-":
-                            memory -= Long.parseLong(textField.getText());
-                            break;
-                        case "/":
-                            memory /= Long.parseLong(textField.getText());
-                            break;
-                        case "*":
-                            memory *= Long.parseLong(textField.getText());
-                            break;
-                    } text = String.valueOf(memory);
+                    doOperation();
+                    text = String.valueOf(memory);
                 } else
                     text = textField.getText();
 
@@ -276,5 +280,22 @@ public class SimpleCalc {
             memoryLabel.setText("0");
         } else
             memoryLabel.setText(String.valueOf(memory) + " " + text);
+    }
+
+    void doOperation() {
+        switch (operation) {
+            case "+":
+                memory += Long.parseLong(textField.getText());
+                break;
+            case "-":
+                memory -= Long.parseLong(textField.getText());
+                break;
+            case "d":
+                memory = memory / Long.parseLong(textField.getText());
+                break;
+            case "*":
+                memory *= Long.parseLong(textField.getText());
+                break;
+        }
     }
 }
