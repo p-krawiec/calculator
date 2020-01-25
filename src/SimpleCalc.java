@@ -27,22 +27,25 @@ public class SimpleCalc {
     private JButton BackspaceButton;
     private JButton DivideButton;
     private JButton PlusButton;
-    private JButton EqualsButtob;
+    private JButton EqualsButton;
     private JLabel memoryLabel;
 
     long memory = 0; //pamięć kalkulatora
     String operation = "nop"; //no operation //obecnie wykonywana operacja
-    boolean firstDigit = true; //czy jest to pierwsza cyfra zapisywana po wykonaniu operacji
+    boolean firstDigit = false; //czy jest to pierwsza cyfra zapisywana po wykonaniu operacji
 
     public SimpleCalc() {
 
         //ustawienie fonta dla textField
-        textField.setFont(new Font("SansSerif", Font.BOLD, 20));
+        textField.setFont(new Font("SansSerif", Font.BOLD, 26));
         //ustawienie fonta dla memorylabel
         memoryLabel.setFont(new Font("SansSerif", Font.BOLD, 11));
+        textField.setBorder(BorderFactory.createEmptyBorder());
 
         numbersListener();
         functionListener();
+
+
     }
 
     public void numbersListener() {
@@ -238,13 +241,10 @@ public class SimpleCalc {
         PlusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 if(operation.equals("nop")) {
-                    if(memory == 0)
+                    if (memory == 0)
                         memory = Long.parseLong(textField.getText());
-                    else
-                        memory += Long.parseLong(textField.getText());
-                } else {
+                } else
                     doOperation();
-                }
                 operation = PlusButton.getText();
                 setMemoryLabel("+");
 
@@ -256,13 +256,10 @@ public class SimpleCalc {
         MinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 if(operation.equals("nop")) {
-                    if(memory == 0)
+                    if (memory == 0)
                         memory = Long.parseLong(textField.getText());
-                    else
-                        memory -= Long.parseLong(textField.getText());
-                } else {
+                } else
                     doOperation();
-                }
                 operation = MinusButton.getText();
                 setMemoryLabel("-");
 
@@ -274,15 +271,12 @@ public class SimpleCalc {
         TimesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 if(operation.equals("nop")) {
-                    if(memory == 0)
+                    if (memory == 0)
                         memory = Long.parseLong(textField.getText());
-                    else
-                        memory *= Long.parseLong(textField.getText());
-                } else {
+                } else
                     doOperation();
-                }
-                operation = TimesButton.getText();
-                setMemoryLabel("*");
+                operation = "x";
+                setMemoryLabel("×");
 
                 firstDigit = true;
                 textField.setText(String.valueOf(memory));
@@ -291,23 +285,21 @@ public class SimpleCalc {
 
         DivideButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+
                 if(operation.equals("nop")) {
                     if(memory == 0)
                         memory = Long.parseLong(textField.getText());
-                    else
-                        memory = memory / Long.parseLong(textField.getText());
-                } else {
+                } else
                     doOperation();
-                }
                 operation = "d"; //bo znak / wywoływał błędy
-                setMemoryLabel("/");
+                setMemoryLabel("÷");
 
                 firstDigit = true;
                 textField.setText(String.valueOf(memory));
             }
         });
 
-        EqualsButtob.addActionListener(new ActionListener() {
+        EqualsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
                 if(!operation.equals("nop")){
@@ -339,9 +331,12 @@ public class SimpleCalc {
                 memory -= Long.parseLong(textField.getText());
                 break;
             case "d":
-                memory = memory / Long.parseLong(textField.getText());
+                if(textField.getText().equals("0")) {
+                    memory = 0;
+                } else
+                    memory = memory / Long.parseLong(textField.getText());
                 break;
-            case "*":
+            case "x":
                 memory *= Long.parseLong(textField.getText());
                 break;
         }

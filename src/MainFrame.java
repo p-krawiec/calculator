@@ -1,11 +1,12 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class MainFrame extends JFrame {
 
     public MainFrame() {
         super("Kalkulator");
 
-        setSize(250,360);
+        setSize(260,365);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         //setResizable(false);
@@ -17,6 +18,7 @@ public class MainFrame extends JFrame {
 
     private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();
+        menuBar.setBackground(Color.decode("#E6E6E6"));
 
         JMenu fileMenu = new JMenu("Typ");
         JMenuItem simpleItem = new JMenuItem("Kalkulator prosty");
