@@ -33,6 +33,8 @@ public class SimpleCalc {
     double memory = 0; //pamięć kalkulatora
     String operation = "nop"; //no operation //obecnie wykonywana operacja
     boolean firstDigit = false; //czy jest to pierwsza cyfra zapisywana po wykonaniu operacji
+    int maxLenght = 14; //maksymalna długość ciągu na ekranie
+    boolean error = false;
 
     public SimpleCalc() {
 
@@ -52,147 +54,167 @@ public class SimpleCalc {
         a1Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
-                if(firstDigit) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                if(firstDigit || textField.getText().equals("ERROR")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
                     textField.setText("");
                     firstDigit = false;
                 }
-                if(textField.getText().equals("0"))
-                    text = a1Button.getText();
-                else
-                    text = textField.getText() + a1Button.getText();
-                textField.setText(text);
+                if(textField.getText().length() < maxLenght) {
+                    if (textField.getText().equals("0"))
+                        text = a1Button.getText();
+                    else
+                        text = textField.getText() + a1Button.getText();
+                    textField.setText(text);
+                }
             }
         });
 
         a2Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
-                if(firstDigit) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                if(firstDigit || textField.getText().equals("ERROR")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
                     textField.setText("");
                     firstDigit = false;
                 }
-                if(textField.getText().equals("0"))
-                    text = a2Button.getText();
-                else
-                    text = textField.getText() + a2Button.getText();
-                textField.setText(text);
+                if(textField.getText().length() < maxLenght) {
+                    if (textField.getText().equals("0"))
+                        text = a2Button.getText();
+                    else
+                        text = textField.getText() + a2Button.getText();
+                    textField.setText(text);
+                }
             }
         });
 
         a3Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
-                if(firstDigit) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                if(firstDigit || textField.getText().equals("ERROR")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
                     textField.setText("");
                     firstDigit = false;
                 }
-                if(textField.getText().equals("0"))
-                    text = a3Button.getText();
-                else
-                    text = textField.getText() + a3Button.getText();
-                textField.setText(text);
+                if(textField.getText().length() < maxLenght) {
+                    if (textField.getText().equals("0"))
+                        text = a3Button.getText();
+                    else
+                        text = textField.getText() + a3Button.getText();
+                    textField.setText(text);
+                }
             }
         });
 
         a4Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
-                if(firstDigit) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                if(firstDigit || textField.getText().equals("ERROR")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
                     textField.setText("");
                     firstDigit = false;
                 }
-                if(textField.getText().equals("0"))
-                    text = a4Button.getText();
-                else
-                    text = textField.getText() + a4Button.getText();
-                textField.setText(text);
+                if(textField.getText().length() < maxLenght) {
+                    if (textField.getText().equals("0"))
+                        text = a4Button.getText();
+                    else
+                        text = textField.getText() + a4Button.getText();
+                    textField.setText(text);
+                }
             }
         });
 
         a5Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
-                if(firstDigit) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                if(firstDigit || textField.getText().equals("ERROR")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
                     textField.setText("");
                     firstDigit = false;
                 }
-                if(textField.getText().equals("0"))
-                    text = a5Button.getText();
-                else
-                    text = textField.getText() + a5Button.getText();
-                textField.setText(text);
+                if(textField.getText().length() < maxLenght) {
+                    if (textField.getText().equals("0"))
+                        text = a5Button.getText();
+                    else
+                        text = textField.getText() + a5Button.getText();
+                    textField.setText(text);
+                }
             }
         });
 
         a6Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
-                if(firstDigit) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                if(firstDigit || textField.getText().equals("ERROR")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
                     textField.setText("");
                     firstDigit = false;
                 }
-                if(textField.getText().equals("0"))
-                    text = a6Button.getText();
-                else
-                    text = textField.getText() + a6Button.getText();
-                textField.setText(text);
+                if(textField.getText().length() < maxLenght) {
+                    if (textField.getText().equals("0"))
+                        text = a6Button.getText();
+                    else
+                        text = textField.getText() + a6Button.getText();
+                    textField.setText(text);
+                }
             }
         });
 
         a7Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
-                if(firstDigit) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                if(firstDigit || textField.getText().equals("ERROR")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
                     textField.setText("");
                     firstDigit = false;
                 }
-                if(textField.getText().equals("0"))
-                    text = a7Button.getText();
-                else
-                    text = textField.getText() + a7Button.getText();
-                textField.setText(text);
+                if(textField.getText().length() < maxLenght) {
+                    if (textField.getText().equals("0"))
+                        text = a7Button.getText();
+                    else
+                        text = textField.getText() + a7Button.getText();
+                    textField.setText(text);
+                }
             }
         });
 
         a8Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
-                if(firstDigit) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                if(firstDigit || textField.getText().equals("ERROR")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
                     textField.setText("");
                     firstDigit = false;
                 }
-                if(textField.getText().equals("0"))
-                    text = a8Button.getText();
-                else
-                    text = textField.getText() + a8Button.getText();
-                textField.setText(text);
+                if(textField.getText().length() < maxLenght) {
+                    if (textField.getText().equals("0"))
+                        text = a8Button.getText();
+                    else
+                        text = textField.getText() + a8Button.getText();
+                    textField.setText(text);
+                }
             }
         });
 
         a9Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 String text;
-                if(firstDigit) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                if(firstDigit || textField.getText().equals("ERROR")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
                     textField.setText("");
                     firstDigit = false;
                 }
-                if(textField.getText().equals("0"))
-                    text = a9Button.getText();
-                else
-                    text = textField.getText() + a9Button.getText();
-                textField.setText(text);
+                if(textField.getText().length() < maxLenght) {
+                    if (textField.getText().equals("0"))
+                        text = a9Button.getText();
+                    else
+                        text = textField.getText() + a9Button.getText();
+                    textField.setText(text);
+                }
             }
         });
 
         a0Button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
-                if(firstDigit) { //zabezpieczenie przed nadpisywaniem wyniku operacji
+                if(firstDigit || textField.getText().equals("ERROR")) { //zabezpieczenie przed nadpisywaniem wyniku operacji
                     textField.setText("");
                     firstDigit = false;
                 }
-                if(!textField.getText().equals("0")) {
-                    String text = textField.getText() + "0";
-                    textField.setText(text);
+                if(textField.getText().length() < maxLenght) {
+                    if (!textField.getText().equals("0")) {
+                        String text = textField.getText() + "0";
+                        textField.setText(text);
+                    }
                 }
             }
         });
@@ -201,6 +223,11 @@ public class SimpleCalc {
     private void functionListener() {
         PlusMinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+                if (textField.getText().equals("ERROR")) {
+                    memoryLabel.setText("0");
+                    textField.setText("0");
+                    return;
+                }
                 double tmp = -Double.parseDouble(textField.getText());
                 displayText(tmp);
             }
@@ -209,6 +236,11 @@ public class SimpleCalc {
         CEButton.addActionListener(new ActionListener() {
                 //kasuje tylko to co na wyswietlaczu
             public void actionPerformed(ActionEvent actionEvent) {
+                if (textField.getText().equals("ERROR")) {
+                    memoryLabel.setText("0");
+                    textField.setText("0");
+                    return;
+                }
                 textField.setText("0");
             }
         });
@@ -227,6 +259,11 @@ public class SimpleCalc {
 
         BackspaceButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+                if (textField.getText().equals("ERROR")) {
+                    memoryLabel.setText("0");
+                    textField.setText("0");
+                    return;
+                }
                 if(!firstDigit) { //blokada przed usuwaniem kiedy jest sie tuz po operacji
                     String text = "0";
                     if (textField.getText().length() > 1)
@@ -240,6 +277,11 @@ public class SimpleCalc {
 
         PlusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+                if (textField.getText().equals("ERROR")) {
+                    memoryLabel.setText("0");
+                    textField.setText("0");
+                    return;
+                }
                 if(operation.equals("nop")) {
                     if (memory == 0) //jestli nie ma operacji w tle i lizczba jest pusta dodaj te liczbe do pamieci
                         memory = Double.parseDouble(textField.getText());
@@ -260,6 +302,11 @@ public class SimpleCalc {
 
         MinusButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+                if (textField.getText().equals("ERROR")) {
+                    memoryLabel.setText("0");
+                    textField.setText("0");
+                    return;
+                }
                 if(operation.equals("nop")) {
                     if (memory == 0) //jestli nie ma operacji w tle i lizczba jest pusta dodaj te liczbe do pamieci
                         memory = Double.parseDouble(textField.getText());
@@ -280,6 +327,11 @@ public class SimpleCalc {
 
         TimesButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+                if (textField.getText().equals("ERROR")) {
+                    memoryLabel.setText("0");
+                    textField.setText("0");
+                    return;
+                }
                 if(operation.equals("nop")) {
                     if (memory == 0) //jestli nie ma operacji w tle i lizczba jest pusta dodaj te liczbe do pamieci
                         memory = Double.parseDouble(textField.getText());
@@ -300,6 +352,11 @@ public class SimpleCalc {
 
         DivideButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+                if (textField.getText().equals("ERROR")) {
+                    memoryLabel.setText("0");
+                    textField.setText("0");
+                    return;
+                }
                 if(operation.equals("nop")) {
                     if (memory == 0) //jestli nie ma operacji w tle i lizczba jest pusta dodaj te liczbe do pamieci
                         memory = Double.parseDouble(textField.getText());
@@ -320,6 +377,11 @@ public class SimpleCalc {
 
         EqualsButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+                if (textField.getText().equals("ERROR")) {
+                    memoryLabel.setText("0");
+                    textField.setText("0");
+                    return;
+                }
                 String tmpString = memoryLabel.getText();
                 double tmpDouble = Double.parseDouble(textField.getText()); //aby ustawić ładnie memoryLabel
                 long tmpLong = (long) tmpDouble;
@@ -348,6 +410,11 @@ public class SimpleCalc {
 
         CommaButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
+                if (textField.getText().equals("ERROR")) {
+                    memoryLabel.setText("0");
+                    textField.setText("0");
+                    return;
+                }
                 String text = textField.getText();
                 if(!text.contains("."))
                     text = textField.getText() + ".";
@@ -379,6 +446,7 @@ public class SimpleCalc {
             case "div":
                 if(textField.getText().equals("0")) {
                     memory = 0;
+                    error = true;
                 } else
                     memory = memory / input;
                 break;
@@ -386,17 +454,38 @@ public class SimpleCalc {
                 memory *= input;
                 break;
         }
+        //maxLenght = 12 liczb czyli 999 999 999 999
+        long tmp = 999999999;
+        tmp = (tmp * 1000000) + 999999;
+        if(memory > tmp) {
+            error = true;
+            return;
+        }
+        if(memory < 0.00001) {
+            memory = 0;
+            return;
+        }
+        String tmpString = String.valueOf(memory);
+        if(tmpString.length() > maxLenght) {
+            String tmpStringCut = tmpString.substring(0, maxLenght);
+            memory = Double.parseDouble(tmpStringCut);
+        }
     }
 
     void displayText(double input) { //pracuję na memory
-        String tmp;
-        long tmpMemory = (long) input;
-        //jeśli nie ma nic po przecinku wyswietl bez przecinka
-        if(input == tmpMemory)
-            tmp = String.valueOf(tmpMemory);
-        else //jesli jest cos po przecinku wyswietl z przecinkiem
-            tmp = String.valueOf(input);
+        if(error) {
+            textField.setText("ERROR");
+        } else {
+            String tmp;
+            long tmpMemory = (long) input;
+            //jeśli nie ma nic po przecinku wyswietl bez przecinka
+            if (input == tmpMemory)
+                tmp = String.valueOf(tmpMemory);
+            else //jesli jest cos po przecinku wyswietl z przecinkiem
+                tmp = String.valueOf(input);
 
-        textField.setText(tmp);
+            textField.setText(tmp);
+        }
+        error = false;
     }
 }
