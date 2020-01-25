@@ -8,4 +8,4 @@
 
 To mój, w pełni w sumie działający, kalkulator w Javie bo uczyłem się Swinga i pomyślałem, że sprawdzę sobie co dam radę zrobić
 
-![](https://i.imgur.com/1IHy6xx.gifv)
+![](Wbk3dqMEet.gif)
