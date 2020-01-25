@@ -3,8 +3,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Calculator extends JFrame{
+public class SimpleCalc {
     private JPanel mainPanel;
+    public JPanel getMainPanel() { return mainPanel; }
+
     private JButton a1Button;
     private JButton a2Button;
     private JButton a3Button;
@@ -30,19 +32,10 @@ public class Calculator extends JFrame{
     long memory = 0;
     String operation = "nop"; //no operation //obecnie wykonywana operacja
 
-    public Calculator() {
-        super("Calculator");
-
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(250,320);
-        //setResizable(false);
-        setVisible(true);
-        add(mainPanel);
+    public SimpleCalc() {
 
         //ustawienie fonta dla textField
         textField.setFont(new Font("SansSerif", Font.BOLD, 20));
-        //ustawienie fonta dla memoryLabel
 
         numbersListener();
         functionListener();

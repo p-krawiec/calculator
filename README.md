@@ -1,1 +1,1 @@
-# Java Simple Calculator
+# Java Calculator project
