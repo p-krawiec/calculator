@@ -29,12 +29,17 @@ public class SimpleCalc {
     private JButton PlusButton;
     private JButton EqualsButton;
     private JLabel memoryLabel;
+    private JButton MRButton;
+    private JButton MMinusButton;
+    private JButton MPlusButton;
+    private JButton MCButton;
 
     double memory = 0; //pamięć kalkulatora
     String operation = "nop"; //no operation //obecnie wykonywana operacja
     boolean firstDigit = false; //czy jest to pierwsza cyfra zapisywana po wykonaniu operacji
     int maxLenght = 14; //maksymalna długość ciągu na ekranie
     boolean error = false;
+    double deepMemory = 0; //głęboka pamiec kalkulatora
 
     public SimpleCalc() {
 
@@ -419,6 +424,38 @@ public class SimpleCalc {
                 if(!text.contains("."))
                     text = textField.getText() + ".";
                 textField.setText(text);
+            }
+        });
+
+        //////////// MEMORY BUTTONS
+
+        MCButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                deepMemory = 0;
+                MCButton.setEnabled(false);
+                MRButton.setEnabled(false);
+            }
+        });
+
+        MRButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                displayText(deepMemory);
+            }
+        });
+
+        MPlusButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                deepMemory += Double.parseDouble(textField.getText());
+                MCButton.setEnabled(true);
+                MRButton.setEnabled(true);
+            }
+        });
+
+        MMinusButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                deepMemory -= Double.parseDouble(textField.getText());
+                MCButton.setEnabled(true);
+                MRButton.setEnabled(true);
             }
         });
     }
